@@ -1,7 +1,7 @@
 {
   "framework": null,
   "buildCommand": "pnpm --filter @workspace/marea-swimwear run build",
-  "outputDirectory": "artifacts/marea-swimwear/dist",
+  "outputDirectory": "dist",
   "installCommand": "pnpm install --ignore-scripts",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

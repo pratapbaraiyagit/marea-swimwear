@@ -46,7 +46,8 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   build: {
-    outDir: path.resolve(import.meta.dirname, 'dist'),
+    // Output to repo root /dist so Vercel can find it easily
+    outDir: path.resolve(import.meta.dirname, '..', '..', 'dist'),
     emptyOutDir: true,
   },
   server: {
