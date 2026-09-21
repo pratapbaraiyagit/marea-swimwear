@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "MAREA Swimwear Store"
+description = "A premium swimwear storefront for MAREA with editorial product discovery, responsive shopping pages, and direct WhatsApp ordering without accounts or online checkout."
+version = "1.0.0"
+id = "artifacts/marea-swimwear"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23694
+
+[services.development]
+run = "pnpm --filter @workspace/marea-swimwear run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/marea-swimwear", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/marea-swimwear/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23694"
+BASE_PATH = "/"
