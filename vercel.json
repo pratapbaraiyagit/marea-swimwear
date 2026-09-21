@@ -4,6 +4,9 @@
   "outputDirectory": "dist",
   "installCommand": "pnpm install --ignore-scripts",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
